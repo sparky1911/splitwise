@@ -1,0 +1,8 @@
+POST  http://localhost:8080/groups
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IiIsImV4cCI6MTcyMDc5MDQwOSwidXNlcklkIjoiYW5raXQifQ.jq78ipIcm7oKRo0gWxfGNoURmEkFg1OwG0L2IcfnDd8
+
+{
+  "name": "stuff1"
+
+}
