@@ -8,15 +8,12 @@ import (
 )
 
 func main() {
-	// Initialize the database
+
 	db.InitDB()
 
-	// Set up the Gin router
 	r := gin.Default()
 
-	// Register routes
 	routes.RegisterRoutes(r)
 
-	// Start the server
 	r.Run(":8080")
 }
