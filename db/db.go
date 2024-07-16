@@ -42,4 +42,19 @@ func createTables() {
 	if err != nil {
 		log.Fatalf("could not create groups table %v", err)
 	}
+
+	createMembershipTable := `CREATE TABLE IF NOT EXISTS memberships(
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	user_id INTEGER NOT NULL,
+	group_id INTEGER NOT NULL,
+	role TEXT DEFAULT 'member'
+	joined_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+	FOREIGN KEY(user_id) REFERENCES users(id),
+	FOREIGN KEY(user_id) REFERENCES group(id)
+	UNIQUE(user_id,group_id)
+		)`
+	_, err = DB.Exec(createMembershipTable)
+	if err != nil {
+		log.Fatalf("could not create groups table %v", err)
+	}
 }
